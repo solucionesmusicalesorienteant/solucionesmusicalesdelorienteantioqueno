@@ -270,6 +270,140 @@ img{
     margin-bottom: var(--mb-4);
 }
 
+.home__content {
+  display: grid;
+  gap: 2rem;
+}
+
+.home__subtitle {
+  display: inline-block;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.home__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.home__carousel {
+  position: relative;
+  min-height: 320px;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+
+.carousel__track {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 360px;
+}
+
+.carousel__slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 360px;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.98);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+  pointer-events: none;
+}
+
+.carousel__slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  z-index: 1;
+  pointer-events: auto;
+}
+
+.carousel__slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+}
+
+.carousel__content {
+  position: absolute;
+  left: 1.5rem;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 2;
+  color: var(--white-color);
+}
+
+.carousel__label {
+  display: inline-block;
+  margin-bottom: .85rem;
+}
+
+.carousel__controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.carousel__button {
+  pointer-events: auto;
+  border: none;
+  background-color: rgba(10, 10, 10, 0.7);
+  color: var(--white-color);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel__button:hover {
+  background-color: rgba(210, 179, 86, 0.95);
+  transform: scale(1.05);
+}
+
+.carousel__nav {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: .5rem;
+}
+
+.carousel__dot {
+  width: .9rem;
+  height: .9rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel__dot.active {
+  background-color: var(--first-color);
+  transform: scale(1.1);
+}
+
 /*========== BUTTONS ==========*/
 .button{
   display: inline-block;
@@ -424,8 +558,23 @@ img{
     display: none;
   }
 
-  .home__container{
-    height: 100vh;
+  .nav__cta{
+    display: flex;
+    align-items: center;
+  }
+
+  .home__content{
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .home__data{
+    text-align: left;
+  }
+
+  .home__carousel{
+    min-height: 420px;
   }
 
   .services__container{

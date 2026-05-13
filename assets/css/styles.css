@@ -299,28 +299,40 @@ img {
 
 .carousel__track {
   position: relative;
-  height: 100%;
+  display: block;
+  width: 100%;
+  min-height: 360px;
 }
 
 .carousel__slide {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 360px;
   opacity: 0;
+  visibility: hidden;
   transform: scale(0.98);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  pointer-events: none;
 }
 
 .carousel__slide.active {
   opacity: 1;
+  visibility: visible;
   transform: scale(1);
   z-index: 1;
+  pointer-events: auto;
 }
 
 .carousel__slide img {
+  display: block;
   width: 100%;
   height: 100%;
+  min-height: 360px;
   object-fit: cover;
-  display: block;
   filter: saturate(1.05) brightness(0.75);
 }
 
