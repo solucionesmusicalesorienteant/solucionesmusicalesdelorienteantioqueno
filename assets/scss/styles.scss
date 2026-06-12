@@ -435,6 +435,17 @@ img{
     color: var(--body-color);
 }
 
+.btn-google {
+  border-color: rgba(255, 255, 255, 0.35);
+  color: var(--white-color);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.btn-google:hover {
+    background: rgba(210, 179, 86, 0.95);
+    color: var(--body-color);
+}
+
 /*========== SERVICES (CARDS) ==========*/
 .services__container{
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
